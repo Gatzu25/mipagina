@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 Para alguien muy especial 💖</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:linear-gradient(135deg,#ffd6e7,#fff5f8);display:flex;justify-content:center;align-items:center;height:100vh;overflow:hidden;transition:.8s}
+.carta{background:#fff;padding:35px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.2);max-width:700px;text-align:center}
+h1{color:#ff2d75;font-size:42px}
+p{margin:20px 0;font-size:20px;line-height:1.7;color:#444}
+button{padding:15px 35px;font-size:20px;border:none;border-radius:15px;cursor:pointer;margin:10px;transition:.3s}
+#si{background:#ff4f8b;color:#fff}
+#si:hover{transform:scale(1.1)}
+#no{background:#777;color:#fff;position:relative}
+#final{display:none}
+.corazon{position:fixed;font-size:30px;animation:caer linear forwards}
+@keyframes caer{
+0%{transform:translateY(-10vh) rotate(0deg);opacity:1}
+100%{transform:translateY(110vh) rotate(360deg);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="carta" id="carta">
+<h1>🌷 Para la niña más hermosa del mundo 🌷</h1>
+
+<p>
+Desde que llegaste a mi vida entendí que hay personas capaces de cambiarlo todo con una sonrisa.
+Cada recuerdo contigo sigue siendo muy especial para mí, y por eso quiero hacerte una pregunta que sale directamente de mi corazón. ❤️
+</p>
+
+<h2 style="color:#e91e63;font-size:32px;margin:20px 0;">
+💖 ¿Me permitirías volver a conquistar tu corazón y ser nuevamente tu novio? 💖
+</h2>
+
+<button id="si">Sí ❤️</button>
+<button id="no">No... 😔</button>
+
+</div>
+
+<script>
+
+const mensajes=[
+"No... 😔",
+"¿Segura? 🥺",
+"Ándale, por favor 💖",
+"Piensa un poquito más 🌸",
+"No seas malita 🥹",
+"Mi corazón confía en ti ❤️",
+"Una oportunidad más ✨",
+"Prometo hacerte muy feliz 💗",
+"Por fis 👉👈",
+"Di que sí 🌹"
+];
+
+const no=document.getElementById("no");
+
+no.addEventListener("mouseover",()=>{
+
+no.innerHTML=mensajes[Math.floor(Math.random()*mensajes.length)];
+
+no.style.position="fixed";
+no.style.left=Math.random()*(window.innerWidth-220)+"px";
+no.style.top=Math.random()*(window.innerHeight-80)+"px";
+
+});
+
+document.getElementById("si").onclick=function(){
+
+document.body.style.background="linear-gradient(135deg,#ff5e9a,#ff9fc8,#ffe6f0)";
+
+document.getElementById("carta").innerHTML=`
+<h1>🎉 ¡SÍIIII! 🎉</h1>
+
+<h2 style="color:#ff2d75;font-size:35px;">
+🥹❤️ Me acabas de hacer la persona más feliz del mundo ❤️🥹
+</h2>
+
+<p style="font-size:22px;">
+Prometo seguir enamorándote cada día, hacerte sonreír cuando estés triste,
+acompañarte en tus sueños, respetarte, cuidarte y demostrarte con hechos lo mucho que significas para mí.
+Gracias por darme esta oportunidad. 🌹
+</p>
+
+<h1>💖 TE AMO MUCHÍSIMO 💖</h1>
+
+<h2>✨ Espero que esta sea solo una nueva página de nuestra historia. ✨</h2>
+`;
+
+for(let i=0;i<120;i++){
+
+let c=document.createElement("div");
+c.className="corazon";
+c.innerHTML=["💖","💕","❤️","🌸","💗"][Math.floor(Math.random()*5)];
+c.style.left=Math.random()*100+"vw";
+c.style.animationDuration=(3+Math.random()*4)+"s";
+c.style.fontSize=(20+Math.random()*25)+"px";
+c.style.animationDelay=Math.random()*2+"s";
+document.body.appendChild(c);
+
+}
+
+alert("🥹❤️ ¡Gracias por decir que sí! Prometo seguir conquistándote todos los días. ❤️");
+
+};
+
+</script>
+
+</body>
+</html>
